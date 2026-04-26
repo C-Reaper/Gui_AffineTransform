@@ -1,193 +1,56 @@
-# Gui_AffineTransform
+# Project README
 
+## Overview
+This project is a simple GUI application that demonstrates affine transformations using a green fast car sprite. The application uses libraries such as WindowEngine1.0, Sprite, and RenderPixel to handle window creation, rendering, and pixel manipulation.
 
-## Project Overview
+## Features
+- **Affine Transformations**: Displays an animated car with affine transformations.
+- **Cross-platform Support**: Builds and runs on Linux, Windows, Wine, and WebAssembly environments.
 
-This project implements specialized functionality related to affinetransform.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for affinetransform
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler (GCC)
 - Make utility
 - Standard development tools
+- Libraries: X11 for Linux, user32 and gdi32 for Windows, winmm for multimedia support
 
-### Build Steps
+## Build & Run
 
-1. Navigate to project directory:
-```bash
-cd Gui_AffineTransform
+### Building the Project
+To build the project, navigate to the project directory and run:
+```sh
+make -f Makefile.linux all  # For Linux
+make -f Makefile.windows all  # For Windows
+make -f Makefile.wine all  # For Wine
+make -f Makefile.web all  # For WebAssembly
 ```
 
-2. Build the project:
-```bash
-make -f Makefile.(os) all
+### Running the Project
+To execute the built application:
+```sh
+make -f Makefile.linux exe  # For Linux
+make -f Makefile.windows exe  # For Windows
+make -f Makefile.wine exe  # For Wine
+make -f Makefile.web exe  # For WebAssembly
 ```
 
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
+### Clean Build
+To clean the build artifacts and rebuild:
+```sh
+make -f Makefile.linux do  # For Linux
+make -f Makefile.windows do  # For Windows
+make -f Makefile.wine do  # For Wine
+make -f Makefile.web do  # For WebAssembly
 ```
 
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
+### Debugging
+To debug the application:
+```sh
+make -f Makefile.linux debug  # For Linux
+make -f Makefile.windows debug  # For Windows
+make -f Makefile.wine debug  # For Wine
+make -f Makefile.web dg  # For WebAssembly
 ```
 
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
-```
-Gui_AffineTransform/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
-
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+This README provides a comprehensive guide to building and running the project across different platforms.
