@@ -1,7 +1,7 @@
 # Project README
 
 ## Overview
-This project is a simple GUI application that demonstrates affine transformations using a green fast car sprite. The application uses libraries such as WindowEngine1.0, Sprite, and RenderPixel to handle window creation, rendering, and pixel manipulation.
+This project is a simple GUI application that demonstrates affine transformations using a green fast car sprite. The application uses libraries such as WindowEngine, Sprite, and RenderPixel to handle window creation, rendering, and pixel manipulation.
 
 ## Features
 - **Affine Transformations**: Displays an animated car with affine transformations.
