@@ -24,13 +24,13 @@ void Setup(AlxWindow* w){
     a = 0.0f;
 }
 void Update(AlxWindow* w){
-    if(Stroke(ALX_KEY_W).DOWN)      y -= 10.0f * w->ElapsedTime;
-    if(Stroke(ALX_KEY_S).DOWN)      y += 10.0f * w->ElapsedTime;
-    if(Stroke(ALX_KEY_A).DOWN)      x -= 10.0f * w->ElapsedTime;
-    if(Stroke(ALX_KEY_D).DOWN)      x += 10.0f * w->ElapsedTime;
+    if(Stroke(ALX_KEY_W).DOWN)      y -= 100.0f * w->ElapsedTime;
+    if(Stroke(ALX_KEY_S).DOWN)      y += 100.0f * w->ElapsedTime;
+    if(Stroke(ALX_KEY_A).DOWN)      x -= 100.0f * w->ElapsedTime;
+    if(Stroke(ALX_KEY_D).DOWN)      x += 100.0f * w->ElapsedTime;
     
-    if(Stroke(ALX_KEY_UP).DOWN)     s -= 1.0f * w->ElapsedTime;
-    if(Stroke(ALX_KEY_DOWN).DOWN)   s += 1.0f * w->ElapsedTime;
+    if(Stroke(ALX_KEY_UP).DOWN)     s -= 10.0f * w->ElapsedTime;
+    if(Stroke(ALX_KEY_DOWN).DOWN)   s += 10.0f * w->ElapsedTime;
     
     if(Stroke(ALX_KEY_LEFT).DOWN)   a -= 1.0f * w->ElapsedTime;
     if(Stroke(ALX_KEY_RIGHT).DOWN)  a += 1.0f * w->ElapsedTime;
@@ -39,10 +39,10 @@ void Update(AlxWindow* w){
 
     AffineTransform_Identity(&transform);
     //AffineTransform_Trans(&transform,(Vec2){ x,y });
-    AffineTransform_Trans(&transform,(Vec2){ -(float)sp.w * 0.5f,-(float)sp.h * 0.5f });
+    AffineTransform_Trans(&transform,(Vec2){ (float)sp.w * 0.5f,(float)sp.h * 0.5f });
     //AffineTransform_Trans(&transform,(Vec2){ -x,-y });
     AffineTransform_RotateZ(&transform,a);
-    AffineTransform_Trans(&transform,(Vec2){ (float)sp.w * 0.5f,(float)sp.h * 0.5f });
+    AffineTransform_Trans(&transform,(Vec2){ -(float)sp.w * 0.5f,-(float)sp.h * 0.5f });
     AffineTransform_Scale(&transform,(Vec2){ s,s });
     
     Rect area = AffineTransform_Rect(&transform,(Rect){ 0.0f,0.0f,sp.w,sp.h });
@@ -53,7 +53,7 @@ void Update(AlxWindow* w){
             const Vec2 rp = { area.p.x + j,area.p.y + i };
             const Vec2 p = AffineTransform_Calc(&transform,rp);
             const Pixel col = Sprite_Get(&sp,p.x,p.y);
-            RenderPixel(x + rp.x,y + rp.y,col);
+            RenderPixelAlpha(x + rp.x,y + rp.y,col);
         }
     }
 }
